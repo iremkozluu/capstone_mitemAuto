@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ProgressBar
+        android:id="@+id/progressBar_cart"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="Cart"
+        app:titleTextColor="@color/white">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginEnd="10dp">
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.appbar.MaterialToolbar>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_cart"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:padding="10dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@id/til_total"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintVertical_bias="0.0"
+        tools:listitem="@layout/item_cart" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_total"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:elevation="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/btn_preorder"
+                android:layout_width="383dp"
+                android:layout_height="64dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="24dp"
+                android:backgroundTint="#DB3022"
+                android:text="Preorder Now"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintVertical_bias="0.531" />
+
+            <TextView
+                android:id="@+id/tv_total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="304dp"
+                android:layout_marginTop="10dp"
+                android:gravity="end"
+                android:hint="total price"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@+id/btn_preorder"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageView
+        android:id="@+id/iv_delete"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/ic_delete"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

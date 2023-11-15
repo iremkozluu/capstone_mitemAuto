@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/login_graph"
+    app:startDestination="@id/splashFragment">
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.ikozlu.capstone_mitemauto.ui.splash.SplashFragment"
+        android:label="SplashFragment" >
+        <action
+            android:id="@+id/splashToSignin"
+            app:destination="@id/signinFragment" />
+        <action
+            android:id="@+id/splashToMain"
+            app:destination="@id/main_graph" />
+    </fragment>
+    <fragment
+        android:id="@+id/signinFragment"
+        android:name="com.ikozlu.capstone_mitemauto.ui.login.signin.SigninFragment"
+        android:label="SigninFragment" >
+        <action
+            android:id="@+id/signinToSignup"
+            app:destination="@id/signupFragment" />
+        <action
+            android:id="@+id/signinToMain"
+            app:destination="@id/main_graph" />
+    </fragment>
+    <fragment
+        android:id="@+id/signupFragment"
+        android:name="com.ikozlu.capstone_mitemauto.ui.login.signup.SignupFragment"
+        android:label="SignupFragment" >
+        <action
+            android:id="@+id/signupToMain"
+            app:destination="@id/main_graph" />
+        <action
+            android:id="@+id/signupToSignin"
+            app:destination="@id/signinFragment" />
+    </fragment>
+    <include app:graph="@navigation/main_graph" />
+</navigation>

@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ProgressBar
+        android:id="@+id/progressBar_detail"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#DB3022"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="Product Detail"
+        app:titleTextColor="#FFFFFFFF">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginEnd="10dp">
+
+            <ImageView
+                android:id="@+id/iv_cart"
+                android:layout_width="48dp"
+                android:layout_height="36dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_cart" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.appbar.MaterialToolbar>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintVertical_bias="0.0">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <ImageView
+                android:id="@+id/iv_product"
+                android:layout_width="362dp"
+                android:layout_height="158dp"
+                android:layout_margin="20dp"
+                app:layout_constraintBottom_toTopOf="@id/tv_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.489"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0"
+                tools:src="@drawable/ic_profile" />
+
+            <RatingBar
+                android:id="@+id/ratingbar"
+                style="@style/Widget.AppCompat.RatingBar.Indicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:contentDescription="ratingbar"
+                app:layout_constraintEnd_toEndOf="@+id/tv_title"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/tv_title"
+                app:layout_constraintTop_toBottomOf="@+id/iv_product" />
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="254dp"
+                android:layout_height="40dp"
+                android:layout_margin="10dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ratingbar" />
+
+            <TextView
+                android:id="@+id/tv_desc"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:layout_constraintEnd_toEndOf="@+id/tv_title"
+                app:layout_constraintStart_toStartOf="@+id/tv_title"
+                app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+
+            <TextView
+                android:id="@+id/tv_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="10dp"
+                android:layout_marginStart="10dp"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/tv_desc"
+                app:layout_constraintStart_toStartOf="@+id/tv_desc"
+                app:layout_constraintTop_toBottomOf="@+id/tv_desc" />
+
+            <TextView
+                android:id="@+id/tv_sale_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/tv_price"
+                app:layout_constraintStart_toStartOf="@+id/tv_price"
+                app:layout_constraintTop_toBottomOf="@+id/tv_price"
+                tools:text="₺12.90" />
+
+            <Button
+                android:id="@+id/btn_add_to_cart"
+                android:layout_width="120dp"
+                android:layout_height="71dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginHorizontal="50dp"
+                android:layout_marginEnd="16dp"
+                android:backgroundTint="#DB3022"
+                android:text="Add to Cart"
+                android:textColor="#FFFFFFFF"
+                android:textColorLink="#FF000000"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_back" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinatorLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

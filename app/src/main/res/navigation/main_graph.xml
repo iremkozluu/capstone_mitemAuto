@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.ikozlu.capstone_mitemauto.ui.main.home.HomeFragment"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/homeToDetail"
+            app:destination="@id/detailFragment" />
+        <action
+            android:id="@+id/gomeToCart"
+            app:destination="@id/cartFragment" />
+        <action
+            android:id="@+id/homeToFavorite"
+            app:destination="@id/favoriteFragment" />
+        <action
+            android:id="@+id/homeToProfile"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cartFragment"
+        android:name="com.ikozlu.capstone_mitemauto.ui.main.cart.CartFragment"
+        android:label="CartFragment" >
+        <action
+            android:id="@+id/cartToHome"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/cartToPayment"
+            app:destination="@id/paymentFragment" />
+        <action
+            android:id="@+id/cartToDetail"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/paymentFragment"
+        android:name="com.ikozlu.capstone_mitemauto.ui.main.payment.PaymentFragment"
+        android:label="PaymentFragment" >
+        <action
+            android:id="@+id/paymentToPaymentSuccess"
+            app:destination="@id/paymentSuccessFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.ikozlu.capstone_mitemauto.ui.main.detail.DetailFragment"
+        android:label="DetailFragment" >
+
+        <argument
+            android:name="id"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/favoriteFragment"
+        android:name="com.ikozlu.capstone_mitemauto.ui.main.favorite.FavoriteFragment"
+        android:label="FavoriteFragment" >
+        <action
+            android:id="@+id/favoriteToDetail"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/paymentSuccessFragment"
+        android:name="com.ikozlu.capstone_mitemauto.ui.main.paymentsuccess.PaymentSuccessFragment"
+        android:label="PaymentSuccessFragment" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.ikozlu.capstone_mitemauto.ui.main.profile.ProfileFragment"
+        android:label="ProfileFragment" />
+
+    <fragment
+        android:id="@+id/searchingFragment"
+        android:name="com.ikozlu.capstone_mitemauto.ui.searching.SearchingFragment"
+        android:label="fragment_searching"
+        tools:layout="@layout/fragment_searching" >
+        <action
+            android:id="@+id/searchingToDetail"
+            app:destination="@id/detailFragment" />
+    </fragment>
+</navigation>
